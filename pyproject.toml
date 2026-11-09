@@ -1,0 +1,14 @@
+[project]
+name = "tiny-fssutf-unicode-predicate"
+version = "0.1.0"
+description = "Checks a byte sequence for valid UTF-8 and locates the first offending byte."
+requires-python = ">=3.10"
+dependencies = []
+readme = "README.md"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
