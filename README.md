@@ -40,3 +40,10 @@ index of the bad *continuation* byte when a later continuation is wrong. For
 example `first_invalid_byte(b"\xe2\x82")` is `0` (there is no third byte),
 while `first_invalid_byte(b"\xe2\x82A")` is `2`. That is the byte you would
 point at in a hex dump, which is what the function is for.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
